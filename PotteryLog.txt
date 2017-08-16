@@ -1,0 +1,67 @@
+Global API Endpoints:
+POST /signup	Signup
+POST /auth/login	Login
+GET /auth/logout	Logout
+
+* Works:
+Primary photo
+Type/Class of piece
+Project / Series name *
+Piece # in Project / Series
+Price
+Height
+Diameter
+Width
+Length
+Units (mm vs in)
+Current state *
+Date created
+Last updated date
+Clay type (selection or notes?)
+Surface Notes
+General Notes
+
+
+Pieces API Endpoints:
+GET /works             List all works
+POST /works            Create a new work
+GET /works/:id         Get a work (:id)
+PUT /works/:id         Update a work (:id)
+DELETE /works/:id      Delete a work (:id) and its logs
+
+
+
+* Log
+Date
+Photo
+Note
+
+Log API Endpoings:
+GET /works/:id/logs    Get all logs for a work (:id)
+GET /logs/:id          Get all logs for a work (:id)
+PUT /logs/:id          Update a log (:id) for a work
+DELETE /logs:id        Delete a log (:id) from a work
+
+
+* Helpful links
+react bootstrapping tutorial:https://hackernoon.com/simple-react-development-in-2017-113bd563691f
+secure jwt management: https://stormpath.com/blog/where-to-store-your-jwts-cookies-vs-html5-web-storage
+react todo tutorial: https://scotch.io/tutorials/create-a-simple-to-do-app-with-react
+react application tutorial with redux: https://www.davidmeents.com/blog/manage-state-connect-to-api-redux-axios/
+react login scheme: https://medium.com/the-many/adding-login-and-authentication-sections-to-your-react-or-react-native-app-7767fd251bd1
+webpack: https://www.smashingmagazine.com/2017/02/a-detailed-introduction-to-webpack/
+
+
+Front end app layout
+
+* Public - can be viewed without login (internet facing)
+
+/             # Description of the app/welcome/promotion page
+  /login      # Allows login and sign up
+  /gallery    # Public gallery of photos
+
+* Secured - must be logged in to access
+
+  /works
+  /works/:id
+  /account

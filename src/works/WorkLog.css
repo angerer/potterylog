@@ -1,0 +1,50 @@
+.Work-log-title {
+  float: left;
+  margin: 0.1em;
+}
+
+.Log-entry-add {
+  float: right;
+}
+
+.Log-entries {
+  margin: 1.25em;
+  clear: both;
+}
+
+.Log-entry-row {
+  position: relative;
+}
+
+.Log-entry-title {
+  font-weight: normal;
+  color: #999;
+  margin: 0px;
+  margin-top: 0.75em;
+  margin-bottom: 0.1em;
+}
+
+img.Log-entry-thumbnail {
+  width: 100px;
+}
+
+.Log-entry-photo {
+  float: left;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+}
+
+.Log-entry-text {
+}
+
+.Log-entry-delete {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.1em;
+  vertical-align: baseline;
+}
+
+.Log-entry-align {
+  clear: both;
+}
