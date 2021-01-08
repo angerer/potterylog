@@ -1,15 +1,15 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import HeaderLink from './HeaderLink.js'
 import './Header.css';
 
-const Header = () => {
+const Header = ({isAuthenticated}) => {
   return (
     <header>
       <nav>
         <ul className="navigation">
-          <li><Link className="navItem" activeClassName="navItemActive" to='/'>Home</Link></li>
-          <li><Link className="navItem" activeClassName="navItemActive" to='/gallery'>Public Gallery</Link></li>
-          <li><Link className="navItem" activeClassName="navItemActive" to='/works'>All Works</Link></li>
+          <li><HeaderLink to='/' display="true">Home</HeaderLink></li>
+          <li><HeaderLink to='/gallery' display={isAuthenticated()}>Public Gallery</HeaderLink></li>
+          <li><HeaderLink to='/works' display="true">All Works</HeaderLink></li>
         </ul>
       </nav>
     </header>

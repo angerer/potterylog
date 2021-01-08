@@ -3,7 +3,7 @@ import axios from 'axios'
 import './WorkLog.css';
 
 const LogEntryAdd = ({add}) => {
-  return (<div className="Log-entry-add"><a href="#" onClick={add}>[add]</a></div>);
+  return (<div className="Log-entry-add"><button onClick={add}>[add]</button></div>);
 }
 
 const LogEntryTitle = ({logEntryTitle}) => {
@@ -19,7 +19,7 @@ const LogEntryText = ({logEntryText}) => {
 }
 
 const LogEntryDelete = ({logEntryId, remove}) => {
-  return (<div className="Log-entry-delete"><a href="#" onClick={remove}>[delete]</a></div>);
+  return (<div className="Log-entry-delete"><button onClick={remove}>[delete]</button></div>);
 }
 
 const LogEntry = ({logEntry, key, remove}) => {
@@ -43,19 +43,20 @@ class WorkLog extends Component {
     super(props);
 
     this.handleRemove = this.handleRemove.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
 
     // Set initial state
     this.state = {
       workLog: []
     }
 
-    this.setState({workLog: this.state.workLog});
+    this.setState({workLog: [this.state.workLog]});
   }
 
   componentDidMount(){
     // Make HTTP reques with Axios
     axios.get('http://localhost:3002/works/4/logs',
-      {headers: {'Authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE1MDI5Mzg0Njh9.KI0zv4-5LIrtzDWq5bQsQEAlnGRrz_PxF9UQNf9-DhE'}}
+      {headers: {'Authorization': "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE1MDM4MDQ0MzJ9.X7rJkBez2Yyuf_e-Ok23aOq-pjQrxdP1FopS4p1C67U"}}
     ).then((res) => {
       // Set state with result
       this.setState({workLog:res.data});
@@ -68,8 +69,8 @@ class WorkLog extends Component {
       return logEntry.id !== id ? logEntry : null;
     });
     // Update state with filter
-    axios.delete('http://localhost:3002/works/4/logs' + '/' + id,
-      {headers: {'Authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE1MDI5Mzg0Njh9.KI0zv4-5LIrtzDWq5bQsQEAlnGRrz_PxF9UQNf9-DhE'}}
+    axios.delete('http://localhost:3002/works/4/logs/' + id,
+      {headers: {'Authorization': "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE1MDM4MDQ0MzJ9.X7rJkBez2Yyuf_e-Ok23aOq-pjQrxdP1FopS4p1C67U"}}
     ).then((res) => {
       this.setState({workLog:remainder});
     })
@@ -99,7 +100,7 @@ class WorkLog extends Component {
     return (
       <div className="Work-log">
         <h1 className="Work-log-title">Work Log</h1>
-        <LogEntryAdd add={this.handleAdd.bind(this)} />
+        <LogEntryAdd add={this.handleAdd} />
         <div className="Log-entries">{entryNode}</div>
       </div>
     )

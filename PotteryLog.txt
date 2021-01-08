@@ -50,6 +50,8 @@ react todo tutorial: https://scotch.io/tutorials/create-a-simple-to-do-app-with-
 react application tutorial with redux: https://www.davidmeents.com/blog/manage-state-connect-to-api-redux-axios/
 react login scheme: https://medium.com/the-many/adding-login-and-authentication-sections-to-your-react-or-react-native-app-7767fd251bd1
 webpack: https://www.smashingmagazine.com/2017/02/a-detailed-introduction-to-webpack/
+reach authentication login redirect: https://scotch.io/courses/using-react-router-4/authentication-with-redirect
+
 
 
 Front end app layout
